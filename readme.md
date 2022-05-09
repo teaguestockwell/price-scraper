@@ -1,8 +1,8 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-[license-shield]: https://img.shields.io/github/license/teaguestockwell/price-scaper.svg
-[license-url]: https://github.com/teaguestockwell/price-scaper/blob/master/licence.txt
+[license-shield]: https://img.shields.io/github/license/teaguestockwell/price-scraper.svg
+[license-url]: https://github.com/teaguestockwell/price-scraper/blob/master/licence.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/teague-stockwell/
 
@@ -15,7 +15,7 @@
   <p align="center">
     Get product data such as price, name, images, and more from a variety of online stores
     <br />
-    <a href="https://github.com/teaguestockwell/price-scaper/issues">Report Bug</a>
+    <a href="https://github.com/teaguestockwell/price-scraper/issues">Report Bug</a>
   </p>
 </p>
 
@@ -30,7 +30,7 @@
 
 ## Roadmap
 
-See the [open issues](https://github.com/teaguestockwell/price-scaper/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/teaguestockwell/price-scraper/issues) for a list of proposed features (and known issues).
 
 ## Contributing
 Open source contributions are welcome here :). Please create an issue to talk about your bug fix or proposed feature.
