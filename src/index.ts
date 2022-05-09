@@ -1,1 +1,2 @@
-export const getFoo = () => 1
+export * from './common'
+export * from './retailers'
