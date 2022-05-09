@@ -21,4 +21,4 @@ export type CurrencyCode =
   | 'PHP'
   | 'SGD'
   | 'THB'
-  | 'ZAR'
+  | 'ZAR';

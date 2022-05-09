@@ -1,2 +1,2 @@
-export * from './common'
-export * from './retailers'
+export * from './common';
+export * from './retailers';
