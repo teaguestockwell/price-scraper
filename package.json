@@ -2,7 +2,7 @@
   "name": "price-scraper",
   "main": "dist/index.js",
   "module": "dist/product-scrapper.esm.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": "https://github.com/teaguestockwell/product-scraper",
   "author": "teague stockwell",
   "license": "MIT",
