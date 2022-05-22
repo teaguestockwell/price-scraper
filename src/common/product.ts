@@ -1,18 +1,22 @@
-import { CurrencyCode } from './currency';
+import { Currency } from './currency';
 
 export type Product = {
   /**
-   * the ISO 4217 currency code
+   * the ISO 4217 currency code, name, and symbol
    */
-  currency?: CurrencyCode;
+  currency: Currency | undefined;
   /**
    * the total amount of currency for the given qty
    */
-  price?: string;
+  price: string;
   /**
    * the amount of complete sets sold for the given price
    */
-  qty?: number;
+  qty: string;
+  /**
+   * the main image's source url
+   */
+  src: string;
   /**
    * the name identifier used at this url
    */
@@ -21,8 +25,4 @@ export type Product = {
    * the url scraped to get this product
    */
   url: string;
-  /**
-   * the main image's source url
-   */
-  src?: string;
 };

@@ -4,15 +4,17 @@ import stealth from 'puppeteer-extra-plugin-stealth'
 
 const p = puppeteer.use(stealth());
 
+type ScrapeRes = Record<keyof Product, string>
+
 export type ScrapeOptions = {
   url: string,
   headless?: boolean,
   waitAfterNavigate?: number
   screenshot?: boolean,
-  eval: () => Omit<Product, 'url'>,
+  eval: () => Omit<ScrapeRes, 'url' | 'title'>,
 }
 
-export const scrape = async (options: ScrapeOptions): Promise<Product> => {
+export const scrape = async (options: ScrapeOptions): Promise<ScrapeRes> => {
   try {
     const browser = await p.launch({headless: options.headless});
     const page = await browser.newPage();
@@ -27,11 +29,12 @@ export const scrape = async (options: ScrapeOptions): Promise<Product> => {
         await page.screenshot({path: 'screenshot.jpeg', type: 'jpeg', fullPage: true})
       }
       const product = await page.evaluate(options.eval)
-      await page.close()
+      const title = await page.title()
       await browser.close()
       return {
-        ...product,
         url: options.url,
+        title,
+        ...product,
       }
     } catch (e) {
       await browser.close()
@@ -43,5 +46,9 @@ export const scrape = async (options: ScrapeOptions): Promise<Product> => {
   return {
     url: options.url,
     title: '',
+    src: '',
+    price: '',
+    currency: '',
+    qty: '',
   }
 }

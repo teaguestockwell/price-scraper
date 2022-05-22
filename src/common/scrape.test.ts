@@ -6,8 +6,11 @@ it('loads pages', async () => {
     headless: true,
     waitAfterNavigate: 500,
     eval: () => ({
-      title: document.title,
       src: document.querySelector("meta[property='og:image']")?.getAttribute('content') ?? '',
+      price: '',
+      currency: 'USD',
+      qty: '1',
+      currencySymbol: ''
     }),
   })
 

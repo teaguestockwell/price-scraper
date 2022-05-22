@@ -6,6 +6,7 @@
   "author": "teague stockwell",
   "license": "MIT",
   "private": false,
+  "sideEffects": false,
   "files": [
     "dist",
     "src"
