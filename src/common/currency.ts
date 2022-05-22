@@ -1,7 +1,7 @@
 export type Currency = typeof currency[number];
 
 export const getCurrencyCode = (_s: string) => {
-  return currency.find(c => c.name === 'United States Dollar')
+  return currency.find(c => c.name === 'United States Dollar');
 };
 
 export const currency = [

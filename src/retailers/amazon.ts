@@ -9,7 +9,8 @@ export const amazon = async (options: RetailerOptions): Promise<Product> => {
       currency: document.querySelector('.a-price-symbol')?.innerHTML ?? '',
       price: document.querySelector('.a-price-whole')?.textContent ?? '',
       qty: '1',
-      src: document.querySelector('.imgTagWrapper img')?.getAttribute('src') ?? '',
+      src:
+        document.querySelector('.imgTagWrapper img')?.getAttribute('src') ?? '',
     }),
   });
 
@@ -18,5 +19,5 @@ export const amazon = async (options: RetailerOptions): Promise<Product> => {
   return {
     ...data,
     currency,
-  }
+  };
 };

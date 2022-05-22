@@ -1,5 +1,5 @@
-export type RetailerDomain = 'amazon.com'
+export type RetailerDomain = 'amazon.com';
 
 export type RetailerOptions = {
-  url: string
-}
+  url: string;
+};
