@@ -75,8 +75,10 @@
   },
   "dependencies": {
     "@samirrayani/metascraper-shopping": "^1.4.22",
+    "@types/lodash": "^4.14.182",
     "axios": "^0.27.2",
     "fast-xml-parser": "^4.0.8",
+    "lodash": "^4.17.21",
     "metascraper": "^5.29.10",
     "metascraper-author": "^5.29.10",
     "metascraper-clearbit": "^5.29.10",

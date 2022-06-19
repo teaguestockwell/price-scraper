@@ -8,10 +8,10 @@ const urls = [
 
 it.each(urls)('scrapes %s', async url => {
   const data = await amazon(url);
-  console.log(data);
+
   expect(data.currency).toBe('USD');
   expect(data.price).toBeTruthy();
   expect(data.image).toContain('amazon.com');
-  expect(data.name).toBeTruthy();
+  expect(data.title).toBeTruthy();
   expect(data.url).toContain('amazon.com');
 });

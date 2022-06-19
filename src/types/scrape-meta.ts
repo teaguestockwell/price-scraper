@@ -5,7 +5,6 @@ import { ScrapeMetaWithMeta } from './scrape-options';
 export type ScrapeMeta = {
   hostname: string | null;
   image: string | null;
-  name: string | null;
   title: string | null;
   url: string;
   price: number | null;
@@ -19,7 +18,6 @@ export type ScrapeMeta = {
 
 export const getNullScrapeMeta = (url: string): ScrapeMetaWithMeta => ({
   hostname: new URL(url).hostname ?? null,
-  name: null,
   title: null,
   image: null,
   url,

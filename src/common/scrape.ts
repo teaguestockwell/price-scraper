@@ -24,12 +24,9 @@ export const scrape = async (options: ScrapeOptions): Promise<ScrapeMetaWithMeta
     await page.goto(options.url);
     await page.waitForTimeout(options.wait);
     const partial = await page.evaluate(options.eval);
-    const name = await page.title();
     await page.close();
     return {
       ...getNullScrapeMeta(options.url),
-      name,
-      title: name,
       ...partial,
     };
   } catch {

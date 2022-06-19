@@ -74,7 +74,7 @@ const parseMeta = (meta: any, url: string): ParsedMeta => {
       res.mpn = acc['item model number'];
     }
   } else {
-    console.log('no parser', url)
+    console.error('no parser', url)
   }
 
   return res;
@@ -83,10 +83,11 @@ const parseMeta = (meta: any, url: string): ParsedMeta => {
 export const amazon = async (url: string): Promise<ScrapeMeta> => {
   const data = await scrape({
     url,
-    type: 'headed',
+    type: 'headless',
     wait: 300,
     eval: () => {
       return {
+        title: document.title,
         image:
           document.querySelector('#landingImage')?.getAttribute('src') ?? null,
         meta: {
