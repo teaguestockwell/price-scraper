@@ -1,8 +1,8 @@
 import { ScrapeMeta } from './scrape-meta';
 
 export type ScrapeOptions = {
-  type: 'headed' | 'headless';
+  type: 'headed' | 'headless' | 'cli';
   url: string;
   wait: number;
-  eval: () => Partial<ScrapeMeta>;
+  eval: (body?: string) => Partial<ScrapeMeta>;
 };

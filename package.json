@@ -75,6 +75,7 @@
   },
   "dependencies": {
     "@samirrayani/metascraper-shopping": "^1.4.22",
+    "axios": "^0.27.2",
     "metascraper": "^5.29.10",
     "metascraper-author": "^5.29.10",
     "metascraper-clearbit": "^5.29.10",
