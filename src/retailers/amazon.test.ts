@@ -6,16 +6,11 @@ const urls = [
 ];
 
 it.each(urls)('scrapes %s', async url => {
-  const data = await amazon({ url });
+  const data = await amazon(url);
 
-  console.log(data);
-
-  expect(data.currency?.code).toBe('USD');
-  expect(data.currency?.symbol).toBe('$');
-  expect(data.currency?.name).toBe('United States Dollar');
+  expect(data.currency).toBe('USD');
   expect(data.price).toBeTruthy();
-  expect(data.qty).toBe('1');
-  expect(data.src).toContain('amazon.com');
-  expect(data.title).toBeTruthy();
+  expect(data.image).toContain('amazon.com');
+  expect(data.name).toBeTruthy();
   expect(data.url).toContain('amazon.com');
 });

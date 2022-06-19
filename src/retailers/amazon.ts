@@ -1,23 +1,24 @@
-import { getCurrencyCode, Product, RetailerOptions, scrape } from '../common';
+import { scrape } from '../common/scrape';
 
-export const amazon = async (options: RetailerOptions): Promise<Product> => {
+export const amazon = async (url: string) => {
   const data = await scrape({
-    url: options.url,
-    headless: false,
-    waitAfterNavigate: 200,
+    url,
+    type: 'headless',
+    wait: 200,
     eval: () => ({
-      currency: document.querySelector('.a-price-symbol')?.innerHTML ?? '',
-      price: document.querySelector('.a-price-whole')?.textContent ?? '',
-      qty: '1',
-      src:
-        document.querySelector('.imgTagWrapper img')?.getAttribute('src') ?? '',
+      image:
+        document.querySelector('.imgTagWrapper img')?.getAttribute('src') ??
+        null,
+      price: (document.querySelector('.a-price-whole')?.textContent ??
+        '') as any,
     }),
   });
 
-  const currency = getCurrencyCode(data.currency);
-
   return {
     ...data,
-    currency,
+    price: data.price
+      ? Number(((data.price as unknown) as string)?.replace(/[^0-9.]/g, ''))
+      : null,
+    currency: 'USD',
   };
 };

@@ -1,22 +1,20 @@
 import { scrape } from './scrape';
 
 it('loads pages', async () => {
-  const { title, src } = await scrape({
+  const { image, url, hostname, name } = await scrape({
     url: 'https://teaguestockwell.com',
-    headless: true,
-    waitAfterNavigate: 500,
+    type: 'headless',
+    wait: 0,
     eval: () => ({
-      src:
+      image:
         document
           .querySelector("meta[property='og:image']")
           ?.getAttribute('content') ?? '',
-      price: '',
-      currency: 'USD',
-      qty: '1',
-      currencySymbol: '',
     }),
   });
 
-  expect(title).toBe('Teague Stockwell • Portfolio');
-  expect(src).toBe('https://teaguestockwell.com/heros/open-graph.png');
+  expect(name).toBe('Teague Stockwell • Portfolio');
+  expect(image).toBe('https://teaguestockwell.com/heros/open-graph.png');
+  expect(url).toBe('https://teaguestockwell.com');
+  expect(hostname).toBe('teaguestockwell.com');
 });

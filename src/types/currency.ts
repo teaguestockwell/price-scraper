@@ -1,7 +1,8 @@
 export type Currency = typeof currency[number];
 
-export const getCurrencyCode = (_s: string) => {
-  return currency.find(c => c.name === 'United States Dollar');
+export const getCurrency = (code: string) => {
+  const res = codeMap[code as any];
+  return res ? res : null;
 };
 
 export const currency = [
@@ -581,3 +582,8 @@ export const currency = [
     symbol: 'Z$',
   },
 ] as const;
+
+const codeMap = currency.reduce((acc, cur) => {
+  acc[cur.code] = cur;
+  return acc;
+}, {} as Record<string, Currency>);

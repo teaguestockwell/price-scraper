@@ -74,8 +74,20 @@
     }
   },
   "dependencies": {
+    "@samirrayani/metascraper-shopping": "^1.4.22",
+    "metascraper": "^5.29.10",
+    "metascraper-author": "^5.29.10",
+    "metascraper-clearbit": "^5.29.10",
+    "metascraper-date": "^5.29.10",
+    "metascraper-description": "^5.29.10",
+    "metascraper-image": "^5.29.10",
+    "metascraper-logo": "^5.29.10",
+    "metascraper-publisher": "^5.29.10",
+    "metascraper-title": "^5.29.10",
+    "metascraper-url": "^5.29.10",
     "puppeteer": "^14.1.1",
     "puppeteer-extra": "^3.2.3",
-    "puppeteer-extra-plugin-stealth": "^2.9.0"
+    "puppeteer-extra-plugin-stealth": "^2.9.0",
+    "schema-dts": "^1.1.0"
   }
 }

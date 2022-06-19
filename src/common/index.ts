@@ -1,5 +1,3 @@
-export * from './product';
-export * from './currency';
+export * from './clients';
+export * from './scrape-meta';
 export * from './scrape';
-export * from './download-img';
-export * from './retailer';
