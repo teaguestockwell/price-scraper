@@ -2,6 +2,15 @@ import type { Browser } from 'puppeteer';
 import puppeteer from 'puppeteer-extra';
 import stealth from 'puppeteer-extra-plugin-stealth';
 import axios from 'axios';
+import { XMLParser } from 'fast-xml-parser';
+
+const parser = new XMLParser({
+  unpairedTags: ["link", "meta"],
+  ignoreAttributes: false,
+  attributeNamePrefix: ""
+});
+
+export const parseXml = (xml: string) => parser.parse(xml);
 
 export const http = axios
 

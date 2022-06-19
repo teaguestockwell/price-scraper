@@ -1,5 +1,6 @@
 import { ItemAvailability, OfferItemCondition } from 'schema-dts';
 import { Currency } from './currency';
+import { ScrapeMetaWithMeta } from './scrape-options';
 
 export type ScrapeMeta = {
   hostname: string | null;
@@ -16,8 +17,8 @@ export type ScrapeMeta = {
   asin: string | null;
 };
 
-export const getNullScrapeMeta = (url: string): ScrapeMeta => ({
-  hostname: new URL(url).hostname,
+export const getNullScrapeMeta = (url: string): ScrapeMetaWithMeta => ({
+  hostname: new URL(url).hostname ?? null,
   name: null,
   title: null,
   image: null,
@@ -29,4 +30,5 @@ export const getNullScrapeMeta = (url: string): ScrapeMeta => ({
   mpn: null,
   availability: null,
   asin: null,
+  meta: null
 });

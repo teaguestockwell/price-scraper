@@ -7,7 +7,7 @@ it('loads pages', async () => {
     type: 'cli',
     wait: 0,
   });
-
+  console.log(data)
   expect(data.currency).toBe('USD');
   expect(data.price).toBeTruthy();
   expect(data.image).toContain('getfpv.com');

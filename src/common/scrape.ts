@@ -1,17 +1,17 @@
 import { http } from './clients';
-import { getNullScrapeMeta, ScrapeMeta} from '../types/scrape-meta';
-import { ScrapeOptions } from '../types/scrape-options';
+import { getNullScrapeMeta } from '../types/scrape-meta';
+import { ScrapeMetaWithMeta, ScrapeOptions } from '../types/scrape-options';
 import { getBrowser } from './clients';
 
-export const scrape = async (options: ScrapeOptions): Promise<ScrapeMeta> => {
+export const scrape = async (options: ScrapeOptions): Promise<ScrapeMetaWithMeta> => {
   if (options.type === 'cli') {
     try {
       const res = await http(options.url);
       const partial = options.eval(res.data);
-      return {
+      return {   
         ...getNullScrapeMeta(options.url),
         ...partial,
-      }
+      } as any
     } catch {
       return getNullScrapeMeta(options.url);
     }
@@ -29,6 +29,7 @@ export const scrape = async (options: ScrapeOptions): Promise<ScrapeMeta> => {
     return {
       ...getNullScrapeMeta(options.url),
       name,
+      title: name,
       ...partial,
     };
   } catch {
