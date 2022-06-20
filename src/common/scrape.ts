@@ -1,20 +1,11 @@
-import { http } from './clients';
 import { getNullScrapeMeta } from '../types/scrape-meta';
 import { ScrapeMetaWithMeta, ScrapeOptions } from '../types/scrape-options';
 import { getBrowser } from './clients';
+import { merge } from './merge'
 
 export const scrape = async (options: ScrapeOptions): Promise<ScrapeMetaWithMeta> => {
   if (options.type === 'cli') {
-    try {
-      const res = await http(options.url);
-      const partial = options.eval(res.data);
-      return {   
-        ...getNullScrapeMeta(options.url),
-        ...partial,
-      } as any
-    } catch {
-      return getNullScrapeMeta(options.url);
-    }
+    throw new Error('CLI scraping is not supported yet');
   }
 
   const browser = await getBrowser({ type: options.type });
@@ -24,11 +15,9 @@ export const scrape = async (options: ScrapeOptions): Promise<ScrapeMetaWithMeta
     await page.goto(options.url);
     await page.waitForTimeout(options.wait);
     const partial = await page.evaluate(options.eval);
+    const title = await page.title();
     await page.close();
-    return {
-      ...getNullScrapeMeta(options.url),
-      ...partial,
-    };
+    return merge(getNullScrapeMeta(options.url), { title }, partial);
   } catch {
     try {
       await page.close();

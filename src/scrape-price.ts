@@ -1,7 +1,6 @@
 import { amazon } from './retailers';
-import { scrapeMeta } from './common';
+import { scrapeMeta, merge } from './common';
 import { ScrapeMeta, getNullScrapeMeta } from './types';
-import { merge } from 'lodash';
 
 const importantFields: (keyof ScrapeMeta)[] = ['price', 'title', 'url'];
 
@@ -75,7 +74,7 @@ export const scrapePrice = async (options: DispatchOptions) => {
     await scrapeMeta({
       url,
       type: 'headed',
-      wait: 300,
+      wait: 500,
     }).catch()
   );
 
@@ -90,7 +89,7 @@ export const scrapePrice = async (options: DispatchOptions) => {
     await scrapeMeta({
       url,
       type: 'headed',
-      wait: 1000,
+      wait: 2000,
     }).catch()
   );
 
