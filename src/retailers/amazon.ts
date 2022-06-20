@@ -32,9 +32,9 @@ const parseMeta = (meta: any, url: string): ParsedMeta => {
       const acc: Record<string, string> = {};
       json.tr?.forEach(({ th, td }: any) => {
         try {
-          const k = th['#text'].trim().toLowerCase()
-          const v = td['#text'].trim()
-          acc[k] = v
+          const k = th['#text'].trim().toLowerCase();
+          const v = td['#text'].trim();
+          acc[k] = v;
         } catch {}
       });
 
@@ -55,7 +55,13 @@ const parseMeta = (meta: any, url: string): ParsedMeta => {
       try {
         const e = li.span.span;
         if (Array.isArray(e)) {
-          const k = e[0]['#text'].split('  ')[0].replaceAll(':', '').replaceAll(`'`, '').replaceAll('+', '').trim().toLowerCase();
+          const k = e[0]['#text']
+            .split('  ')[0]
+            .replaceAll(':', '')
+            .replaceAll(`'`, '')
+            .replaceAll('+', '')
+            .trim()
+            .toLowerCase();
           const v = e[1];
           if (typeof k === 'string' && typeof v === 'string') {
             acc[k] = v.trim();
@@ -64,7 +70,7 @@ const parseMeta = (meta: any, url: string): ParsedMeta => {
       } catch (e) {
         console.error('error parsing details xml meta.details2', e);
       }
-    }) 
+    });
 
     if (acc.asin) {
       res.asin = acc.asin;
@@ -74,7 +80,7 @@ const parseMeta = (meta: any, url: string): ParsedMeta => {
       res.mpn = acc['item model number'];
     }
   } else {
-    console.error('no parser', url)
+    console.error('no parser', url);
   }
 
   return res;

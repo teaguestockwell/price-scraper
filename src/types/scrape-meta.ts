@@ -28,5 +28,5 @@ export const getNullScrapeMeta = (url: string): ScrapeMetaWithMeta => ({
   mpn: null,
   availability: null,
   asin: null,
-  meta: null
+  meta: null,
 });

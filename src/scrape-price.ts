@@ -52,7 +52,7 @@ export const scrapePrice = async (options: DispatchOptions) => {
     return merged;
   }
 
-  await expo.wait()
+  await expo.wait();
 
   merged = merge(
     merged,
@@ -67,7 +67,7 @@ export const scrapePrice = async (options: DispatchOptions) => {
     return merged;
   }
 
-  await expo.wait()
+  await expo.wait();
 
   merged = merge(
     merged,
@@ -82,7 +82,7 @@ export const scrapePrice = async (options: DispatchOptions) => {
     return merged;
   }
 
-  await expo.wait()
+  await expo.wait();
 
   merged = merge(
     merged,

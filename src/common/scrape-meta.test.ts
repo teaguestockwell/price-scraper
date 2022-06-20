@@ -8,7 +8,7 @@ describe('scrapeMeta', () => {
       type: 'cli',
       wait: 0,
     });
-  
+
     expect(data.currency).toBe('USD');
     expect(data.price).toBeTruthy();
     expect(data.image).toContain('getfpv.com');
@@ -17,11 +17,11 @@ describe('scrapeMeta', () => {
   });
   it('teaguestockwell.com cli', async () => {
     const data = await scrapeMeta({
-      url:'https://teaguestockwell.com',
+      url: 'https://teaguestockwell.com',
       type: 'cli',
       wait: 0,
     });
-  
+
     expect(data.title).toBeTruthy();
   });
-})
+});

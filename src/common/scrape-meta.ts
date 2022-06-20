@@ -32,6 +32,6 @@ export const scrapeMeta = async (
     try {
       await page.close();
     } catch {}
-    return getNullScrapeMeta(options.url)
+    return getNullScrapeMeta(options.url);
   }
 };

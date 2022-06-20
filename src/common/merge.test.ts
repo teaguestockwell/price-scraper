@@ -38,12 +38,12 @@ describe('merge', () => {
   });
   it('does not merge self', () => {
     const dest = { a: 1 };
-    const src1 = dest
+    const src1 = dest;
     const src2 = { a: 3 };
-    const src3 = dest
+    const src3 = dest;
 
     const merged = merge(dest, src1, src2, src3);
 
     expect(merged).toEqual({ a: 3 });
-  })
+  });
 });

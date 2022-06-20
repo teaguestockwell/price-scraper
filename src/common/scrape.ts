@@ -1,9 +1,11 @@
 import { getNullScrapeMeta } from '../types/scrape-meta';
 import { ScrapeMetaWithMeta, ScrapeOptions } from '../types/scrape-options';
 import { getBrowser } from './clients';
-import { merge } from './merge'
+import { merge } from './merge';
 
-export const scrape = async (options: ScrapeOptions): Promise<ScrapeMetaWithMeta> => {
+export const scrape = async (
+  options: ScrapeOptions
+): Promise<ScrapeMetaWithMeta> => {
   if (options.type === 'cli') {
     throw new Error('CLI scraping is not supported yet');
   }
