@@ -48,7 +48,5 @@ export const cleanup = async () => {
 
 export const metascraper = require('metascraper')([
   require('@samirrayani/metascraper-shopping')(),
-  require('metascraper-title')(),
   require('metascraper-image')(),
-  require('metascraper-url')(),
 ]);
