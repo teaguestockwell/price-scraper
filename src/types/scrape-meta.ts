@@ -30,3 +30,8 @@ export const getNullScrapeMeta = (url: string): ScrapeMetaWithMeta => ({
   asin: null,
   meta: null,
 });
+
+export const getNullScrape = (url: string) => {
+  const { meta, ...rest } = getNullScrapeMeta(url);
+  return rest;
+};

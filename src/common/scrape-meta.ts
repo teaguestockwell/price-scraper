@@ -22,7 +22,7 @@ export const scrapeMeta = async (
 
   try {
     await page.goto(options.url);
-    await page.waitForTimeout(options.wait);
+    await page.waitForTimeout(options.wait ?? 0);
     const html = await page.content();
     const title = await page.title();
     await page.close();

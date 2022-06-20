@@ -1,16 +1,11 @@
 import { amazon } from './retailers';
 import { scrapeMeta, merge } from './common';
-import { ScrapeMeta, getNullScrapeMeta } from './types';
+import { ScrapeMeta, getNullScrape } from './types';
 
 const importantFields: (keyof ScrapeMeta)[] = ['price', 'title', 'url'];
 
 const hasImportantFields = (meta: ScrapeMeta): boolean => {
   return importantFields.every(field => !!meta[field]);
-};
-
-const getNullishMeta = (url: string) => {
-  const { meta, ...rest } = getNullScrapeMeta(url);
-  return rest;
 };
 
 const getExpo = (backOffCoefficient: number) => {
@@ -36,8 +31,7 @@ export const scrapePrice = async (options: DispatchOptions) => {
     return amazon(options.url);
   }
 
-  let merged = getNullishMeta(url);
-  const expo = getExpo(backOffCoefficient);
+  let merged = getNullScrape(url);
 
   merged = merge(
     merged,
@@ -52,6 +46,7 @@ export const scrapePrice = async (options: DispatchOptions) => {
     return merged;
   }
 
+  const expo = getExpo(backOffCoefficient);
   await expo.wait();
 
   merged = merge(
