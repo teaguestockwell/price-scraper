@@ -22,7 +22,7 @@ const parseMeta = (meta: any, url: string): ParsedMeta => {
     try {
       res.price = Number(meta.price?.replace(/[^0-9.]/g, '')) ?? null;
     } catch {
-      console.error('error parsing amazon price');
+      console.log('error parsing amazon price');
     }
   }
 
@@ -46,7 +46,7 @@ const parseMeta = (meta: any, url: string): ParsedMeta => {
         res.mpn = acc['item model number'];
       }
     } catch {
-      console.error('error parsing details xml meta.details');
+      console.log('error parsing details xml meta.details');
     }
   } else if (meta.details2) {
     const json = parseXml(meta.details2);
@@ -62,7 +62,7 @@ const parseMeta = (meta: any, url: string): ParsedMeta => {
           }
         }
       } catch (e) {
-        console.error('error parsing details xml meta.details2', e);
+        console.log('error parsing details xml meta.details2', e);
       }
     }) 
 
@@ -74,7 +74,7 @@ const parseMeta = (meta: any, url: string): ParsedMeta => {
       res.mpn = acc['item model number'];
     }
   } else {
-    console.error('no parser', url)
+    console.log('no parser', url)
   }
 
   return res;
