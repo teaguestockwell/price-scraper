@@ -69,7 +69,7 @@ let headless: Browser | undefined;
 
 const getHeadedBrowser = async () => {
   if (!headed) {
-    headed = await pup.launch({ headless: false });
+    headed = await pup.launch({ headless: false, args: ['--no-sandbox', '--disable-setuid-sandbox', '--use-gl=egl'], });
     applyPlugins(headed);
   }
   return headed;
@@ -77,7 +77,7 @@ const getHeadedBrowser = async () => {
 
 const getHeadlessBrowser = async () => {
   if (!headless) {
-    headless = await pup.launch({ headless: true });
+    headless = await pup.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox', '--use-gl=egl'], });
     applyPlugins(headless);
   }
   return headless;
