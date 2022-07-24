@@ -1,7 +1,7 @@
 import { getNullScrapeMeta } from '../types/scrape-meta';
 import { ScrapeMetaWithMeta, ScrapeOptions } from '../types/scrape-options';
-import { getBrowser } from './clients';
-import { merge } from './merge';
+import { getBrowser, getPage } from './clients';
+import { merge } from './merge'
 
 export const scrape = async (
   options: ScrapeOptions
@@ -11,7 +11,7 @@ export const scrape = async (
   }
 
   const browser = await getBrowser({ type: options.type });
-  const page = await browser.newPage();
+  const page = await getPage(browser);
 
   try {
     await page.goto(options.url);
