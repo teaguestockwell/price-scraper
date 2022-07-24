@@ -67,9 +67,25 @@ export const http = axios
 let headed: Browser | undefined;
 let headless: Browser | undefined;
 
+const launchArgs = (() => {
+  const options = process.env.PUPPETEER_LAUNCH_ARGS
+  const defaultArgs = { args: ['--no-sandbox', '--disable-setuid-sandbox']}
+  if (options) {
+    try {
+      const args =  JSON.parse(options)
+      console.log(`Puppeteer launch args: ${JSON.stringify(args)}`)
+      return args
+    } catch {
+      console.warn('failed to parse PUPPETEER_LAUNCH_ARGS')
+    }
+  }
+  console.log(`Puppeteer launch args: ${JSON.stringify(defaultArgs)}`)
+  return defaultArgs
+})();
+
 const getHeadedBrowser = async () => {
   if (!headed) {
-    headed = await pup.launch({ headless: false, args: ['--no-sandbox', '--disable-setuid-sandbox', '--use-gl=egl'], });
+    headed = await pup.launch({ headless: false, ...launchArgs });
     applyPlugins(headed);
   }
   return headed;
@@ -77,7 +93,7 @@ const getHeadedBrowser = async () => {
 
 const getHeadlessBrowser = async () => {
   if (!headless) {
-    headless = await pup.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox', '--use-gl=egl'], });
+    headless = await pup.launch({ headless: true, ...launchArgs});
     applyPlugins(headless);
   }
   return headless;
