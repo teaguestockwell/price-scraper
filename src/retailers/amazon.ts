@@ -80,7 +80,7 @@ const parseMeta = (meta: any, url: string): ParsedMeta => {
       res.mpn = acc['item model number'];
     }
   } else {
-    console.log('no parser', url)
+    console.log('no parser', url);
   }
 
   return res;

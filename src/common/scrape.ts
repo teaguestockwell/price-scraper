@@ -1,7 +1,7 @@
 import { getNullScrapeMeta } from '../types/scrape-meta';
 import { ScrapeMetaWithMeta, ScrapeOptions } from '../types/scrape-options';
 import { getBrowser, getPage } from './clients';
-import { merge } from './merge'
+import { merge } from './merge';
 
 export const scrape = async (
   options: ScrapeOptions
