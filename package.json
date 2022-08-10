@@ -42,7 +42,8 @@
     "analyze": "size-limit --why",
     "docker:build": "npm run build && docker build -t product-scraper .",
     "docker:run": "docker run -e PORT=3003 -it -p 3003:3003 product-scraper",
-    "docker:start": "npm run docker:build && npm run docker:run"
+    "docker:start": "npm run docker:build && npm run docker:run",
+    "local:start": "tsdx build && PORT=3000 node server.js"
   },
   "size-limit": [
     {
