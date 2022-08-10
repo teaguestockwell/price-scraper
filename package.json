@@ -39,7 +39,10 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "docker:build": "npm run build && docker build -t product-scraper .",
+    "docker:run": "docker run -e PORT=3003 -it -p 3003:3003 product-scraper",
+    "docker:start": "npm run docker:build && npm run docker:run"
   },
   "size-limit": [
     {
@@ -54,6 +57,7 @@
   "devDependencies": {
     "@size-limit/preset-small-lib": "^7.0.8",
     "@types/puppeteer": "^5.4.6",
+    "express": "^4.18.1",
     "husky": "^8.0.0",
     "jest-puppeteer": "^6.1.0",
     "pretty-quick": "^3.1.3",
@@ -77,11 +81,13 @@
     "@samirrayani/metascraper-shopping": "^1.4.22",
     "axios": "^0.27.2",
     "fast-xml-parser": "^4.0.8",
-    "metascraper": "^5.29.10",
+    "metascraper": "^5.30.1",
     "metascraper-image": "^5.29.10",
-    "puppeteer": "^14.1.1",
-    "puppeteer-extra": "^3.2.3",
-    "puppeteer-extra-plugin-stealth": "^2.9.0",
+    "metascraper-title": "^5.29.15",
+    "metascraper-url": "^5.29.15",
+    "puppeteer": "^16.1.0",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-stealth": "^2.11.1",
     "schema-dts": "^1.1.0"
   }
 }
