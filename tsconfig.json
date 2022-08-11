@@ -2,7 +2,7 @@
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
   "include": ["src", "types"],
   "compilerOptions": {
-    "module": "esnext",
+    "module": "CommonJS",
     "lib": ["dom", "esnext"],
     "importHelpers": true,
     // output .d.ts declaration files for consumers
@@ -33,10 +33,10 @@
     "noEmit": false,
     "target": "es5",
     "allowJs": true,
-    "incremental": true,
+    "incremental": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "outDir": "tsc"
+    "outDir": "dist",
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "src/**/*.test.ts"]
 }

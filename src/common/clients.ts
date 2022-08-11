@@ -1,4 +1,4 @@
-import { Browser } from 'puppeteer';
+import { Browser } from 'puppeteer-extra-plugin/dist/puppeteer';
 import pup from 'puppeteer-extra';
 // https://github.com/berstend/puppeteer-extra/issues/93#issuecomment-563159177
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
@@ -69,7 +69,15 @@ let headless: Browser | undefined;
 
 const launchArgs = (() => {
   const options = process.env.PUPPETEER_LAUNCH_ARGS;
-  const defaultArgs = { args: ['--no-sandbox', '--disable-setuid-sandbox'] };
+  const defaultArgs = {
+    args: [
+      '--disable-gpu',
+      '--disable-dev-shm-usage',
+      '--disable-setuid-sandbox',
+      '--no-sandbox',
+    ],
+    env: { DISPLAY: ':10.0' },
+  };
   if (options) {
     try {
       const args = JSON.parse(options);
