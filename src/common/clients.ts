@@ -69,14 +69,19 @@ let headless: Browser | undefined;
 
 const launchArgs = (() => {
   const options = process.env.PUPPETEER_LAUNCH_ARGS;
+  const chromePath = process.env.CHROME_PATH;
   const defaultArgs = {
     args: [
       '--disable-gpu',
       '--disable-dev-shm-usage',
       '--disable-setuid-sandbox',
+      '--no-first-run',
       '--no-sandbox',
+      '--no-zygote',
+      '--single-process',
     ],
     env: { DISPLAY: ':10.0' },
+    executablePath: chromePath ? chromePath : undefined,
   };
   if (options) {
     try {
@@ -87,7 +92,7 @@ const launchArgs = (() => {
       console.warn('failed to parse PUPPETEER_LAUNCH_ARGS');
     }
   }
-  console.log(`Puppeteer launch args: ${JSON.stringify(defaultArgs)}`);
+  console.log(`Puppeteer launch args: ${JSON.stringify(defaultArgs, null, 2)}`);
   return defaultArgs;
 })();
 
