@@ -17,7 +17,7 @@ app.get('/', async (req, res) => {
   }
 
   try {
-    const data = await dist.scrapeMeta({ url, type: 'headed', wait: 1000 });
+    const data = await dist.scrapePrice({ url, backOffCoefficient: 1.3 });
     res.status(200).json(data);
   } catch ({ stack, message, time = Date.now() }) {
     res.status(500).json({ message, stack, time });
