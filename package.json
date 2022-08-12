@@ -32,7 +32,7 @@
     "node": ">=14"
   },
   "scripts": {
-    "test": "jest --runInBand",
+    "test": "jest --runInBand --",
     "lint": "eslint . --ext .ts",
     "build": "yarn tsc && cp package.json dist && cp readme.md dist && cp license dist && cp yarn.lock dist && cd dist && NODE_ENV=production yarn",
     "prepublishOnly": "yarn build",
