@@ -69,21 +69,6 @@ export const scrapePrice = async (options: DispatchOptions) => {
     await scrapeMeta({
       url,
       type: 'headed',
-      wait: 500,
-    }).catch()
-  );
-
-  if (hasImportantFields(merged)) {
-    return merged;
-  }
-
-  await expo.wait();
-
-  merged = merge(
-    merged,
-    await scrapeMeta({
-      url,
-      type: 'headed',
       wait: 2000,
     }).catch()
   );
