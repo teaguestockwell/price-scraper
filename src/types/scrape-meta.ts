@@ -3,7 +3,7 @@ import { Currency } from './currency';
 import { ScrapeMetaWithMeta } from './scrape-options';
 
 export type ScrapeMeta = {
-  hostname: string | null;
+  domain: string | null;
   image: string | null;
   title: string | null;
   url: string;
@@ -17,7 +17,7 @@ export type ScrapeMeta = {
 };
 
 export const getNullScrapeMeta = (url: string): ScrapeMetaWithMeta => ({
-  hostname: new URL(url).hostname ?? null,
+  domain: new URL(url).hostname.split('.').slice(-2).join('.'),
   title: null,
   image: null,
   url,

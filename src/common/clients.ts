@@ -8,6 +8,7 @@ import shopping from '@samirrayani/metascraper-shopping';
 import metaTitle from 'metascraper-title';
 import metaImage from 'metascraper-image';
 import metaUrl from 'metascraper-url';
+import metaDescription from 'metascraper-description'
 
 import axios from 'axios';
 
@@ -78,4 +79,5 @@ export const metascraper = metaScraper([
   metaTitle(),
   metaImage(),
   metaUrl(),
+  metaDescription()
 ]);
