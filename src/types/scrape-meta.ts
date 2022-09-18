@@ -14,6 +14,7 @@ export type ScrapeMeta = {
   mpn: string | null;
   availability: ItemAvailability | null;
   asin: string | null;
+  description: string | null;
 };
 
 export const getNullScrapeMeta = (url: string): ScrapeMetaWithMeta => ({
@@ -29,6 +30,7 @@ export const getNullScrapeMeta = (url: string): ScrapeMetaWithMeta => ({
   availability: null,
   asin: null,
   meta: null,
+  description: null,
 });
 
 export const getNullScrape = (url: string) => {
