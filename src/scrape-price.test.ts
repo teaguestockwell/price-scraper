@@ -19,15 +19,14 @@ describe('scrapePrice', () => {
     expect(data.title).toBeTruthy();
     expect(data.url).toContain(host);
   });
-  it('scrapes products that cost less than a dollar', async () => {
-    // given a store has a product with a cost > 1 can be scraped
-    const baseCase = await scrapePrice({url: 'https://www.homedepot.com/p/1-2-in-13-x-2-in-Zinc-Plated-Grade-8-Cap-Screw-810088/204274282', backOffCoefficient: 1.3 })
-    expect(baseCase.price).toBeTruthy()
-
-    // when another product from the same store is scrapes, and its price is less than 1
-    const testCase = await scrapePrice({url: 'https://www.homedepot.com/p/Everbilt-1-2-in-Yellow-Zinc-Grade-8-Split-Washer-807138/204276412', backOffCoefficient: 1.3 })
-
-    // then it has a valid price
-    expect(testCase.price).toBeTruthy()
+  it("scrapes products that cost greater than 1: ~2.75", async () => {
+    const data = await scrapePrice({url: 'https://www.homedepot.com/p/1-2-in-13-x-2-in-Zinc-Plated-Grade-8-Cap-Screw-810088/204274282', backOffCoefficient: 1.3 })
+    console.log(data);
+    expect(data.price).toBeTruthy()
+  })
+  it('scrapes products that cost less than 1: ~0.50', async () => {
+    const data = await scrapePrice({url: 'https://www.homedepot.com/p/Everbilt-1-2-in-Yellow-Zinc-Grade-8-Split-Washer-807138/204276412', backOffCoefficient: 1.3 })
+    console.log(data);
+    expect(data.price).toBeTruthy()
   })
 });
