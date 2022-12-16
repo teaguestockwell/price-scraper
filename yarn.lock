@@ -1246,7 +1246,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@metascraper/helpers@^5.24.2", "@metascraper/helpers@^5.29.15":
+"@metascraper/helpers@^5.29.15":
   version "5.29.15"
   resolved "https://registry.yarnpkg.com/@metascraper/helpers/-/helpers-5.29.15.tgz#73aaf1997ba54ac8d97493adcdadb8fa5a950317"
   integrity sha512-7I7X3cHlOnFP5jmbv9/LgATR23tbcp+nYBRzUfnWH6zHt5MfbHIkN+JA45MeflrCBZ+X26RHm8tMVHrYNwUxmA==
@@ -1300,6 +1300,34 @@
     url-regex-safe "~3.0.0"
     video-extensions "~1.2.0"
 
+"@metascraper/helpers@^5.32.3":
+  version "5.32.3"
+  resolved "https://registry.yarnpkg.com/@metascraper/helpers/-/helpers-5.32.3.tgz#a2a9a8cea7227502a9faa9fd1da0305d758b4b08"
+  integrity sha512-9fvHQcql9X2gSyQ5nZacXo7nhfiHZnbqUve5kGnX7RtTWrLXjfP+skqABlJtYtMuqBrb55hKhPG8ADq06lQWhw==
+  dependencies:
+    audio-extensions "0.0.0"
+    chrono-node "2.4.2"
+    condense-whitespace "~2.0.0"
+    entities "~4.4.0"
+    file-extension "~4.0.5"
+    has-values "~2.0.1"
+    image-extensions "~1.1.0"
+    is-relative-url "~3.0.0"
+    is-uri "~1.2.4"
+    iso-639-3 "~2.2.0"
+    isostring "0.0.1"
+    jsdom "~20.0.0"
+    lodash "~4.17.21"
+    memoize-one "~6.0.0"
+    microsoft-capitalize "~1.0.5"
+    mime "~3.0.0"
+    normalize-url "~6.1.0"
+    re2 "~1.18.0"
+    smartquotes "~2.3.2"
+    tldts "~5.7.92"
+    url-regex-safe "~3.0.0"
+    video-extensions "~1.2.0"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -1336,13 +1364,6 @@
   dependencies:
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
-
-"@samirrayani/metascraper-shopping@^1.4.22":
-  version "1.4.22"
-  resolved "https://registry.yarnpkg.com/@samirrayani/metascraper-shopping/-/metascraper-shopping-1.4.22.tgz#e7a0a4775783566fa2382fa2ff44dc19541d655a"
-  integrity sha512-yBxTAK2mB738wN3L/LfYhGpQbFsBKuVGQ/WNei+GDay1hFkCmWgioJ0Zw7i5eaE8wpSZgfjta96temV57cy+WA==
-  dependencies:
-    "@metascraper/helpers" "^5.24.2"
 
 "@sideway/address@^4.1.3":
   version "4.1.4"
@@ -1593,7 +1614,7 @@ abab@^2.0.6:
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.6.tgz#41b80f2c871d19686216b82309231cfd3cb3d291"
   integrity sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==
 
-abbrev@1:
+abbrev@1, abbrev@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
   integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
@@ -2100,6 +2121,13 @@ chrono-node@2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/chrono-node/-/chrono-node-2.4.1.tgz#ba86142a543cc27c0c531f2acbc1c23e3358bafe"
   integrity sha512-23lqpMF2i0lr6dAVpVyYmvVGgX/EtkHBEIgFUd6LQiP7CHLzYeROYvl5X59ZBK73KAV+FGPo4rQv0Fym8CIktw==
+  dependencies:
+    dayjs "^1.10.0"
+
+chrono-node@2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/chrono-node/-/chrono-node-2.4.2.tgz#3a2711d5d44e36a3a327499265dfb747f437ab07"
+  integrity sha512-M55ndjyorMF0ZapxcGiSPj98lmdWTMpRLP5dfQ99SSzYSxan6Sc5G4aIBgZkx2u7Tc+0msiSbeqOyEMCpwh//g==
   dependencies:
     dayjs "^1.10.0"
 
@@ -4473,6 +4501,11 @@ nan@^2.16.0:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.16.0.tgz#664f43e45460fb98faf00edca0bb0d7b8dce7916"
   integrity sha512-UdAqHyFngu7TfQKsCBgAA6pWDkT8MAO7d0jyOecVhN5354xbLqdn8mV9Tat9gepAupm0bt2DbeaSC8vS52MuFA==
 
+nan@^2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.17.0.tgz#c0150a2368a182f033e9aa5195ec76ea41a199cb"
+  integrity sha512-2ZTgtl0nJsO0KQCjEpxcIr5D+Yv90plTitZt9JBfQvVJDS5seMl3FOvsh3+9CoYWXf/1l5OaZzzF6nDm4cagaQ==
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -4493,6 +4526,22 @@ node-gyp@^9.0.0:
     graceful-fs "^4.2.6"
     make-fetch-happen "^10.0.3"
     nopt "^5.0.0"
+    npmlog "^6.0.0"
+    rimraf "^3.0.2"
+    semver "^7.3.5"
+    tar "^6.1.2"
+    which "^2.0.2"
+
+node-gyp@^9.3.0:
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-9.3.0.tgz#f8eefe77f0ad8edb3b3b898409b53e697642b319"
+  integrity sha512-A6rJWfXFz7TQNjpldJ915WFb1LnhO4lIve3ANPbWreuEoLoKlFT3sxIepPBkLhM27crW8YmN+pjlgbasH6cH/Q==
+  dependencies:
+    env-paths "^2.2.0"
+    glob "^7.1.4"
+    graceful-fs "^4.2.6"
+    make-fetch-happen "^10.0.3"
+    nopt "^6.0.0"
     npmlog "^6.0.0"
     rimraf "^3.0.2"
     semver "^7.3.5"
@@ -4522,6 +4571,13 @@ nopt@^5.0.0:
   integrity sha512-Tbj67rffqceeLpcRXrT7vKAN8CwfPeIBgM7E6iBkmKLV7bEMwpGgYLGv0jACUsECaa/vuxP0IjEont6umdMgtQ==
   dependencies:
     abbrev "1"
+
+nopt@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/nopt/-/nopt-6.0.0.tgz#245801d8ebf409c6df22ab9d95b65e1309cdb16d"
+  integrity sha512-ZwLpbTgdhuZUnZzjd7nb1ZV+4DoiC6/sfiVKok72ym/4Tlf+DFdlHYmT2JPmcNNWV6Pi3SDf1kT+A4r9RTuT9g==
+  dependencies:
+    abbrev "^1.0.0"
 
 normalize-path@^3.0.0:
   version "3.0.0"
@@ -4969,15 +5025,6 @@ puppeteer-extra-plugin@^3.2.2:
     debug "^4.1.1"
     merge-deep "^3.0.1"
 
-puppeteer-extra@^3.3.4:
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/puppeteer-extra/-/puppeteer-extra-3.3.4.tgz#e0ecf021783d1112b6b0db20546d5022e632ed55"
-  integrity sha512-fN5pHvSMJ8d1o7Z8wLLTQOUBpORD2BcFn+KDs7QnkGZs9SV69hcUcce67vX4L4bNSEG3A0P6Osrv+vWNhhdm8w==
-  dependencies:
-    "@types/debug" "^4.1.0"
-    debug "^4.1.1"
-    deepmerge "^4.2.2"
-
 qs@6.10.3:
   version "6.10.3"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.10.3.tgz#d6cde1b2ffca87b5aa57889816c5f81535e22e8e"
@@ -5013,6 +5060,15 @@ re2@~1.17.7:
     install-artifact-from-github "^1.3.1"
     nan "^2.16.0"
     node-gyp "^9.0.0"
+
+re2@~1.18.0:
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/re2/-/re2-1.18.0.tgz#6d6f47c5aaa436eb7a7d68b260f8cf25d7948619"
+  integrity sha512-MoCYZlJ9YUgksND9asyNF2/x532daXU/ARp1UeJbQ5flMY6ryKNEhrWt85aw3YluzOJlC3vXpGgK2a1jb0b4GA==
+  dependencies:
+    install-artifact-from-github "^1.3.1"
+    nan "^2.17.0"
+    node-gyp "^9.3.0"
 
 react-is@^18.0.0:
   version "18.2.0"
@@ -5511,6 +5567,18 @@ tlds@^1.228.0:
   version "1.231.0"
   resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.231.0.tgz#93880175cd0a06fdf7b5b5b9bcadff9d94813e39"
   integrity sha512-L7UQwueHSkGxZHQBXHVmXW64oi+uqNtzFt2x6Ssk7NVnpIbw16CRs4eb/jmKOZ9t2JnqZ/b3Cfvo97lnXqKrhw==
+
+tldts-core@^5.7.102:
+  version "5.7.102"
+  resolved "https://registry.yarnpkg.com/tldts-core/-/tldts-core-5.7.102.tgz#ec4558a13a3899cde3f4149439b696fb9a4cd495"
+  integrity sha512-EFhrqqb0abo/9KZ4ZxHSF4e8CYKk/SouOLbNUMZUw+5OjC0hUJbFmHXtHNWYGaqnmwjnvdwFQ1a29Tflpz5Ufg==
+
+tldts@~5.7.92:
+  version "5.7.102"
+  resolved "https://registry.yarnpkg.com/tldts/-/tldts-5.7.102.tgz#89b2a843fdfd918e526ce05099ef7efd3dedf67e"
+  integrity sha512-FvqzkTsADAntBc4EPmcmIs4GkjBBtDKZKHJJU6i1TzL9d+ijBearWEgGNoE8YO9T8pEe+szYE+KFMmh6ixexYA==
+  dependencies:
+    tldts-core "^5.7.102"
 
 tmpl@1.0.5:
   version "1.0.5"

@@ -4,11 +4,11 @@ import { XMLParser } from 'fast-xml-parser';
 import stealth from 'puppeteer-extra-plugin-stealth';
 
 import metaScraper from 'metascraper';
-import shopping from '@samirrayani/metascraper-shopping';
+import { shopping } from './shopping';
 import metaTitle from 'metascraper-title';
 import metaImage from 'metascraper-image';
 import metaUrl from 'metascraper-url';
-import metaDescription from 'metascraper-description'
+import metaDescription from 'metascraper-description';
 
 import axios from 'axios';
 
@@ -38,6 +38,7 @@ const launchArgs = (() => {
     }
   }
   const using = ops ?? defaultOps;
+  // eslint-disable-next-line no-console
   console.log('using browser launch args', JSON.stringify(using, null, 2));
   return using as LaunchOptions;
 })();
@@ -79,5 +80,5 @@ export const metascraper = metaScraper([
   metaTitle(),
   metaImage(),
   metaUrl(),
-  metaDescription()
+  metaDescription(),
 ]);
