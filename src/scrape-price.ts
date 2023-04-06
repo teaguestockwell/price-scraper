@@ -5,26 +5,16 @@ import { ScrapeMeta, getNullScrape } from './types';
 const importantFields: (keyof ScrapeMeta)[] = ['price', 'title', 'url'];
 
 const hasImportantFields = (meta: ScrapeMeta): boolean => {
-  return importantFields.every(field => !!meta[field]);
+  return importantFields.every((field) => !!meta[field]);
 };
 
-const getExpo = (backOffCoefficient: number) => {
-  let backOff = 1;
-  return {
-    wait: async () => {
-      backOff **= backOffCoefficient;
-      await new Promise(resolve => setTimeout(resolve, backOff));
-    },
-  };
-};
 
 export type DispatchOptions = {
   url: string;
-  backOffCoefficient: number;
 };
 
 export const scrapePrice = async (options: DispatchOptions) => {
-  const { url, backOffCoefficient } = options;
+  const { url } = options;
   const hostName = new URL(url).hostname;
 
   if (hostName.includes('amazon')) {
@@ -46,9 +36,6 @@ export const scrapePrice = async (options: DispatchOptions) => {
     return merged;
   }
 
-  const expo = getExpo(backOffCoefficient);
-  await expo.wait();
-
   merged = merge(
     merged,
     await scrapeMeta({
@@ -62,14 +49,12 @@ export const scrapePrice = async (options: DispatchOptions) => {
     return merged;
   }
 
-  await expo.wait();
-
   merged = merge(
     merged,
     await scrapeMeta({
       url,
       type: 'headed',
-      wait: 2000,
+      wait: 1000,
     }).catch()
   );
 
