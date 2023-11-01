@@ -17,4 +17,4 @@ declare module 'puppeteer-extra-plugin-stealth/evasions/user-agent-override';
 declare module 'puppeteer-extra-plugin-stealth/evasions/webgl.vendor';
 declare module 'puppeteer-extra-plugin-stealth/evasions/window.outerdimensions';
 
-declare module '@samirrayani/metascraper-shopping';
+declare module '@metascraper/helpers'

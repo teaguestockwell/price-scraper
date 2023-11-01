@@ -9,9 +9,8 @@ export const scrapeMeta = async (
   if (options.type === 'cli') {
     try {
       const { data } = await http(options.url);
-      const title = data.match(/<title>(.*?)<\/title>/i)?.[1];
       const meta = await metascraper({ html: data, url: options.url });
-      return merge(getNullScrapeMeta(options.url), { title }, meta);
+      return merge(getNullScrapeMeta(options.url), meta);
     } catch {
       return getNullScrapeMeta(options.url);
     }

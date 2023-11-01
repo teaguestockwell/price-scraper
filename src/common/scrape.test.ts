@@ -14,11 +14,10 @@ describe('scrape', () => {
             ?.getAttribute('content') ?? '',
       }),
     });
-    const { image, url, hostname, title } = data;
+    const { image, url, title } = data;
 
     expect(title).toBe('Teague Stockwell • Portfolio');
     expect(image).toBe('https://teaguestockwell.com/heros/open-graph.png');
     expect(url).toBe('https://teaguestockwell.com');
-    expect(hostname).toBe('teaguestockwell.com');
   });
 });

@@ -17,9 +17,8 @@ export const scrape = async (
     await page.goto(options.url);
     await page.waitForTimeout(options.wait ?? 0);
     const partial = await page.evaluate(options.eval);
-    const title = await page.title();
     await page.close();
-    return merge(getNullScrapeMeta(options.url), { title }, partial);
+    return merge(getNullScrapeMeta(options.url), partial);
   } catch {
     try {
       await page.close();
