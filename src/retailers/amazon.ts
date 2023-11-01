@@ -7,6 +7,35 @@ type ParsedMeta = {
   mpn: string | null;
 };
 
+export const amazonHostnames = new Set([
+  // https://www.rainforestapi.com/docs/product-data-api/reference/amazon-domains
+  'amazon.com.au',
+  'amazon.com.be',
+  'amazon.com.br',
+  'amazon.ca',
+  'amazon.cn',
+  'amazon.eg',
+  'amazon.fr',
+  'amazon.de',
+  'amazon.in',
+  'amazon.it',
+  'amazon.co.jp',
+  'amazon.com.mx',
+  'amazon.nl',
+  'amazon.pl',
+  'amazon.sa',
+  'amazon.sg',
+  'amazon.es',
+  'amazon.se',
+  'amazon.com.tr',
+  'amazon.ae',
+  'amazon.co.uk',
+  'amazon.com',
+  // also some other short formats i know of
+  'amzn.com',
+  'amzn.to',
+])
+
 const parseMeta = (meta: any, url: string): ParsedMeta => {
   const res: ParsedMeta = {
     price: null,

@@ -1,4 +1,4 @@
-import { amazon } from './retailers';
+import { route } from './retailers';
 import { scrapeMeta, merge } from './common';
 import { ScrapeMeta, getNullScrape } from './types';
 
@@ -27,8 +27,9 @@ export const scrapePrice = async (options: DispatchOptions) => {
   const { url, backOffCoefficient } = options;
   const hostName = new URL(url).hostname;
 
-  if (hostName.includes('amazon')) {
-    return amazon(options.url);
+  const retailer = route(hostName);
+  if (retailer) {
+    return retailer(options.url);
   }
 
   let merged = getNullScrape(url);
