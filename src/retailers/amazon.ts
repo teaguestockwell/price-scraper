@@ -34,6 +34,7 @@ export const amazonHostnames = new Set([
   // also some other short formats i know of
   'amzn.com',
   'amzn.to',
+  'a.co'
 ])
 
 const parseMeta = (meta: any, url: string): ParsedMeta => {

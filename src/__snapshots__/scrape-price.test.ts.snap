@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scrapePrice scrapes https://a.co/d/iDCaJW4 1`] = `
+Object {
+  "asin": null,
+  "availability": null,
+  "condition": null,
+  "currency": "USD",
+  "description": null,
+  "domain": "a.co",
+  "image": "https://m.media-amazon.com/images/I/71TCqV5ZiaL._AC_SX522_.jpg",
+  "mpn": null,
+  "price": 12,
+  "sku": null,
+  "title": "Amazon.com : super-cute pepper spray Keychain - Fashionable & Powerful, Our 10% OC, No Gel Sprays Long Range and is Specifically Designed for Women, Safe, Accessible, Easy to Use - Multi Color : Sports & Outdoors",
+  "url": "https://a.co/d/iDCaJW4",
+}
+`;
+
+exports[`scrapePrice scrapes https://lunacycle.com/sur-ron-float-seat/ 1`] = `
+Object {
+  "asin": null,
+  "availability": null,
+  "condition": null,
+  "currency": "USD",
+  "description": "The best upgrade seat for Surron on the market at an incredible price. The cheapest and easiest Surron upgrade.",
+  "domain": "lunacycle.com",
+  "hostname": "lunacycle.com",
+  "image": "https://cdn11.bigcommerce.com/s-9vkjq73s/products/2082/images/13097/luna_seat_08__19999.1606874637.500.750.jpg?c=2",
+  "mpn": null,
+  "name": "Luna Cycle",
+  "price": 55,
+  "retailer": "Luna Cycle",
+  "sku": null,
+  "title": "Luna Float Seat for Surron (vinyl)",
+  "url": "https://lunacycle.com/sur-ron-float-seat/",
+}
+`;
+
+exports[`scrapePrice scrapes https://www.amazon.com/Pampers-Sensitive-Water-Based-Pop-Top-Refill/dp/B07JRBSPZ3/ 1`] = `
+Object {
+  "asin": "B07JRBSPZ3",
+  "availability": null,
+  "condition": null,
+  "currency": "USD",
+  "description": null,
+  "domain": "amazon.com",
+  "image": "https://m.media-amazon.com/images/I/91aOT+vJwpL._AC_SX522_PIbundle-12,TopRight,0,0_SH20_.jpg",
+  "mpn": "SG_B07JRBSPZ3_US",
+  "price": 41,
+  "sku": null,
+  "title": "Amazon.com: Baby Wipes, Pampers Sensitive Water Based Baby Diaper Wipes, Hypoallergenic and Unscented, 8 Pop-Top Packs with 4 Refill Packs for Dispenser Tub, 864 Total Wipes (Packaging May Vary) : Pampers: Baby",
+  "url": "https://www.amazon.com/Pampers-Sensitive-Water-Based-Pop-Top-Refill/dp/B07JRBSPZ3/",
+}
+`;
+
+exports[`scrapePrice scrapes https://www.apple.com/shop/buy-mac/macbook-air/midnight-apple-m2-chip-with-8-core-cpu-and-8-core-gpu-256gb 1`] = `
+Object {
+  "asin": null,
+  "availability": null,
+  "condition": null,
+  "currency": "USD",
+  "description": "Trade in your eligible Mac for credit towards a new MacBook Air laptop. Select a model or customise your own. Free delivery. Buy now at apple.com.",
+  "domain": "apple.com",
+  "hostname": "apple.com",
+  "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbookair-og-202306?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1683844743095",
+  "mpn": null,
+  "name": "MacBook Air (13-inch, M2, 2022)",
+  "price": 1099,
+  "retailer": "Apple",
+  "sku": "MLXW3LL/A",
+  "title": "Buy MacBook Air",
+  "url": "https://www.apple.com/shop/buy-mac/macbook-air",
+}
+`;
+
+exports[`scrapePrice scrapes https://www.ebay.com/itm/234695483731?epid=7054508373 1`] = `
+Object {
+  "asin": null,
+  "availability": "https://schema.org/OutOfStock",
+  "condition": "https://schema.org/RefurbishedCondition",
+  "currency": "USD",
+  "description": "Hotter Coffee and brew strength options - the best of both worlds! The Cuisinart 12-Cup programmable thermal coffeemaker is equipped with cutting edge Coffee technology to give you hotter Coffee without sacrificing taste.",
+  "domain": "ebay.com",
+  "hostname": "ebay.com",
+  "image": "https://i.ebayimg.com/images/g/IzkAAOSwla5jhi1o/s-l400.jpg",
+  "mpn": "DCC-1850",
+  "price": 109.99,
+  "retailer": "eBay",
+  "sku": null,
+  "title": "Cuisinart DCC-1850FR 12 Cup Thermal Coffeemaker - Certified Refurbished | eBay",
+  "url": "https://www.ebay.com/itm/234695483731",
+}
+`;
+
+exports[`scrapePrice scrapes https://www.getfpv.com/multi-rotor-frames/5-quad-frames/speedybee-5-freestyle-frame.html 1`] = `
+Object {
+  "asin": null,
+  "availability": "http://schema.org/OutOfStock",
+  "brand": "SpeedyBee",
+  "condition": "http://schema.org/NewCondition",
+  "currency": "USD",
+  "description": "The 5″ Freestyle Frame by SpeedyBee is a perfectly designed X layout quad. It features replaceable arms for easy installation and comes with 30.5x30.5 and 20x20 mounting holes for all size flight controllers.",
+  "domain": "getfpv.com",
+  "hostname": "getfpv.com",
+  "image": "https://cdn-v2.getfpv.com/media/catalog/product/cache/f91e03c40249cf994ef22365aad073fb/n/k/nkd_2102__63203.jpg",
+  "mpn": null,
+  "name": "SpeedyBee 5&quot; Freestyle Frame",
+  "price": 69.99,
+  "retailer": "www.getfpv.com",
+  "sku": "11557",
+  "title": "SpeedyBee 5″ Freestyle Frame",
+  "url": "https://www.getfpv.com/speedybee-5-freestyle-frame.html",
+}
+`;
+
+exports[`scrapePrice scrapes products that cost greater than 1: ~2.75 1`] = `
+Object {
+  "asin": null,
+  "availability": null,
+  "brand": "Everbilt",
+  "condition": null,
+  "currency": "USD",
+  "description": "These Grade 8 cap screws are recommended for high stress bolting applications and are the among the strongest grade of fastener available in steel. The grade 8 bolt is compatible with grade 8 nuts and",
+  "domain": "homedepot.com",
+  "hostname": "homedepot.com",
+  "image": "https://images.thdstatic.com/productImages/a00e0fd3-8175-4760-84e7-cde0af4732db/svn/hex-head-cap-screws-810088-64_1000.jpg",
+  "mpn": null,
+  "name": "1/2 in.-13 x 2 in. Zinc-Plated Grade 8 Cap Screw",
+  "price": 2.75,
+  "retailer": "The Home Depot",
+  "sku": "581077",
+  "title": "Everbilt 1/2 in.-13 x 2 in. Zinc-Plated Grade 8 Cap Screw 810088 - The Home Depot",
+  "url": "https://www.homedepot.com/p/1-2-in-13-x-2-in-Zinc-Plated-Grade-8-Cap-Screw-810088/204274282",
+}
+`;
+
+exports[`scrapePrice scrapes products that cost less than 1: ~0.50 1`] = `
+Object {
+  "asin": null,
+  "availability": null,
+  "brand": "Everbilt",
+  "condition": null,
+  "currency": "USD",
+  "description": "This split lock washer provides a circular bearing surface with offset split ends which help bite into the mating material to provide a locking feature when tightened beneath a nut. It is round with a",
+  "domain": "homedepot.com",
+  "hostname": "homedepot.com",
+  "image": "https://images.thdstatic.com/productImages/92fe10ca-fe21-433e-802f-5463c7695b3d/svn/everbilt-flat-washers-807138-64_1000.jpg",
+  "mpn": null,
+  "name": "1/2 in. Yellow Zinc Grade 8 Split Washer",
+  "price": 0.46,
+  "retailer": "The Home Depot",
+  "sku": "368890",
+  "title": "Everbilt 1/2 in. Yellow Zinc Grade 8 Split Washer 807138 - The Home Depot",
+  "url": "https://www.homedepot.com/p/Everbilt-1-2-in-Yellow-Zinc-Grade-8-Split-Washer-807138/204276412",
+}
+`;
