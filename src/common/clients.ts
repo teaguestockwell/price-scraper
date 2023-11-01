@@ -38,8 +38,6 @@ const launchArgs = (() => {
     }
   }
   const using = ops ?? defaultOps;
-  // eslint-disable-next-line no-console
-  console.log('using browser launch args', JSON.stringify(using, null, 2));
   return using as LaunchOptions;
 })();
 

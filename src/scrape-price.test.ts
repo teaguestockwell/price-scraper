@@ -10,7 +10,7 @@ const urls = [
 
 describe('scrapePrice', () => {
   it.each(urls)('scrapes %s', async url => {
-    const data = await scrapePrice({ url, backOffCoefficient: 1.2 });
+    const data = await scrapePrice({ url });
     const host = new URL(url).hostname;
 
     console.log(data);
@@ -20,12 +20,12 @@ describe('scrapePrice', () => {
     expect(data.url).toContain(host);
   });
   it("scrapes products that cost greater than 1: ~2.75", async () => {
-    const data = await scrapePrice({url: 'https://www.homedepot.com/p/1-2-in-13-x-2-in-Zinc-Plated-Grade-8-Cap-Screw-810088/204274282', backOffCoefficient: 1.3 })
+    const data = await scrapePrice({url: 'https://www.homedepot.com/p/1-2-in-13-x-2-in-Zinc-Plated-Grade-8-Cap-Screw-810088/204274282' })
     console.log(data);
     expect(data.price).toBeTruthy()
   })
   it('scrapes products that cost less than 1: ~0.50', async () => {
-    const data = await scrapePrice({url: 'https://www.homedepot.com/p/Everbilt-1-2-in-Yellow-Zinc-Grade-8-Split-Washer-807138/204276412', backOffCoefficient: 1.3 })
+    const data = await scrapePrice({url: 'https://www.homedepot.com/p/Everbilt-1-2-in-Yellow-Zinc-Grade-8-Split-Washer-807138/204276412' })
     console.log(data);
     expect(data.price).toBeTruthy()
   })

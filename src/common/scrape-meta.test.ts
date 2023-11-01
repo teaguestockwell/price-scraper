@@ -31,6 +31,6 @@ describe('scrapeMeta', () => {
       wait: 0
     })
 
-    expect(data.url).toBe('https://www.getfpv.com/foxeer-foxwhoop-25-hd-cinewhoop-vista.html')
+    expect(data.url).toBe('https://www.getfpv.com/new-arrivals-1/foxeer-foxwhoop-25-hd-cinewhoop-vista.html')
   })
 });
