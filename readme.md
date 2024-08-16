@@ -33,7 +33,7 @@
 See the [open issues](https://github.com/teaguestockwell/price-scraper/issues) for a list of proposed features (and known issues).
 
 ## Contributing
-Open source contributions are welcome here :). Please create an issue to talk about your bug fix or proposed feature.
+Open source contributions are welcome here :) Please create an issue to talk about your bug fix or proposed feature.
 
 ## License
 
